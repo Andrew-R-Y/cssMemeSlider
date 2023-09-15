@@ -5,3 +5,151 @@
   box-sizing: inherit;
   text-decoration: none;
 }
+
+body {
+  background-color: bisque;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.slider-wrapper {
+  height: 92vh;
+  margin: 2vh auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+  border: 2px solid blue;
+}
+
+.container {
+  width: 60vw;
+  margin: 1vh auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.item {
+  display: inline-block;
+  width: 0;
+  height: 80vh;
+  overflow: hidden;
+  background-color: #000000;
+  transition: all 0.5s;
+}
+
+.item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+.bottom-block {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 2vw;
+}
+
+.description-panel {
+  flex-basis: 70vw;
+  opacity: 1;
+  gap: 1vw;
+  height: 2rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+
+.description {
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  height: 100%;
+  font: 400 1.5rem Tahoma, sans-serif;
+  overflow: hidden;
+  transition: all 0.5s;
+  visibility: hidden;
+}
+
+div.bottom-block:has(input[value='first']:checked)
+  + div
+  > div.item:first-child {
+  width: 60vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='second']:checked)
+  + div
+  > div.item:nth-child(2) {
+  width: 60vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='third']:checked)
+  + div
+  > div.item:nth-child(3) {
+  width: 60vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='fourth']:checked)
+  + div
+  > div.item:nth-child(4) {
+  width: 60vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='fifth']:checked) + div > div.item:last-child {
+  width: 60vw;
+  opacity: 1;
+}
+
+div.input-panel:has(input[value='first']:checked)
+  + div.description-panel
+  > p.description:first-child {
+  width: 60vw;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='second']:checked)
+  + div.description-panel
+  > p.description:nth-child(2) {
+  width: 60vw;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='third']:checked)
+  + div.description-panel
+  > p.description:nth-child(3) {
+  width: 60vw;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='fourth']:checked)
+  + div
+  > p.description:nth-child(4) {
+  width: 60vw;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='fifth']:checked)
+  + div
+  > p.description:last-child {
+  width: 60vw;
+  opacity: 1;
+  visibility: visible;
+}
