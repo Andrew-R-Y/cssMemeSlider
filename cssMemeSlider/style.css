@@ -15,12 +15,11 @@ body {
 }
 
 .slider-wrapper {
-  height: 92vh;
+  height: 95vh;
   margin: 2vh auto;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: end;
-  border: 2px solid blue;
+  justify-content: start;
 }
 
 .container {
@@ -47,10 +46,6 @@ body {
   height: 100%;
 }
 
-input:hover {
-  cursor: pointer;
-}
-
 .bottom-block {
   width: 70vw;
   margin: 0 auto;
@@ -63,7 +58,7 @@ input:hover {
 
 .description-panel {
   box-sizing: border-box;
-  flex-basis: 55vw;
+  flex-basis: 50vw;
   opacity: 1;
   height: 2.2rem;
   padding: 0.7rem 0.5rem 0.2rem;
@@ -164,4 +159,164 @@ div.input-panel:has(input[value='fifth']:checked)
 
 div.input-panel:has(input[value='fifth']:checked) + div.description-panel {
   padding: 0.1rem 0.1rem 0.1rem;
+}
+
+.input-panel {
+  flex-basis: 11rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pagination {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 2rem;
+  height: 2.2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transition: all 0.7s;
+}
+
+.circle {
+  box-sizing: border-box;
+  height: 1.5rem;
+  flex-basis: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.disk {
+  flex: 0 0 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  transition: all 0.7s;
+}
+
+@media (hover: hover) {
+  .pagination:hover {
+    cursor: pointer;
+  }
+
+  .pagination:hover > span.circle {
+    border-color: firebrick;
+  }
+
+  .disk:hover {
+    background-color: grey;
+  }
+  input.input:checked + label .disk:hover {
+    background-color: transparent;
+  }
+}
+
+.circle:active {
+  scale: 1.5;
+  opacity: 0.2;
+}
+
+input:checked + label .circle:active {
+  scale: 1;
+  opacity: 1;
+}
+
+input.input:checked + label.pagination {
+  cursor: auto;
+}
+
+input.input:checked + label.pagination > span.circle {
+  background-color: firebrick;
+}
+
+@media (max-width: 930px) {
+  .container {
+    width: 80vw;
+  }
+
+  .item {
+    height: 80vh;
+  }
+
+  .bottom-block {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .description-panel {
+    align-self: start;
+    flex-basis: 2.2rem;
+    flex-grow: 0;
+    width: 100%;
+  }
+
+  .input-panel {
+    flex-basis: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 730px) {
+  .slider-wrapper {
+    height: 90vh;
+  }
+
+  div.container {
+    width: 90vw;
+  }
+
+  .item {
+    height: 55vh;
+  }
+
+  .bottom-block {
+    width: 90vw;
+  }
+
+  .description_small {
+    font: 400 0.75rem Tahoma, sans-serif;
+    padding-top: 0.1rem;
+  }
+
+  div.bottom-block:has(input[value='first']:checked)
+    + div
+    > div.item:first-child {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='second']:checked)
+    + div
+    > div.item:nth-child(2) {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='third']:checked)
+    + div
+    > div.item:nth-child(3) {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='fourth']:checked)
+    + div
+    > div.item:nth-child(4) {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='fifth']:checked)
+    + div
+    > div.item:last-child {
+    width: 95vw;
+    opacity: 1;
+  }
 }
