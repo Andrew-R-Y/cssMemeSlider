@@ -60,14 +60,15 @@ input:hover {
 }
 
 .description-panel {
-  flex-basis: 70vw;
+  box-sizing: border-box;
+  flex-basis: 75vw;
   opacity: 1;
-  gap: 1vw;
-  height: 2rem;
+  height: 2.2rem;
+  padding: 0.7rem 0.5rem 0.2rem;
   overflow: hidden;
   border-radius: 1rem;
-  padding: 0.5rem;
   background-color: #ffffff;
+  transition: all 0.2s;
 }
 
 .description {
@@ -75,10 +76,14 @@ input:hover {
   width: 0;
   opacity: 0;
   height: 100%;
-  font: 400 1.5rem Tahoma, sans-serif;
+  font: 400 1rem Tahoma, sans-serif;
   overflow: hidden;
   transition: all 0.5s;
   visibility: hidden;
+}
+
+.description_small {
+  font: 400 0.8rem Tahoma, sans-serif;
 }
 
 div.bottom-block:has(input[value='first']:checked)
@@ -117,7 +122,7 @@ div.bottom-block:has(input[value='fifth']:checked) + div > div.item:last-child {
 div.input-panel:has(input[value='first']:checked)
   + div.description-panel
   > p.description:first-child {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
   visibility: visible;
 }
@@ -125,7 +130,7 @@ div.input-panel:has(input[value='first']:checked)
 div.input-panel:has(input[value='second']:checked)
   + div.description-panel
   > p.description:nth-child(2) {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
   visibility: visible;
 }
@@ -133,7 +138,7 @@ div.input-panel:has(input[value='second']:checked)
 div.input-panel:has(input[value='third']:checked)
   + div.description-panel
   > p.description:nth-child(3) {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
   visibility: visible;
 }
@@ -141,7 +146,7 @@ div.input-panel:has(input[value='third']:checked)
 div.input-panel:has(input[value='fourth']:checked)
   + div
   > p.description:nth-child(4) {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
   visibility: visible;
 }
@@ -149,7 +154,11 @@ div.input-panel:has(input[value='fourth']:checked)
 div.input-panel:has(input[value='fifth']:checked)
   + div
   > p.description:last-child {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
   visibility: visible;
+}
+
+div.input-panel:has(input[value='fifth']:checked) + div.description-panel {
+  padding: 0.1rem 0.5rem 0.1rem;
 }
