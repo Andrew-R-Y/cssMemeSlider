@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  width: 60vw;
+  width: 70vw;
   margin: 1vh auto;
   display: flex;
   align-items: center;
@@ -52,6 +52,8 @@ input:hover {
 }
 
 .bottom-block {
+  width: 70vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -61,7 +63,7 @@ input:hover {
 
 .description-panel {
   box-sizing: border-box;
-  flex-basis: 75vw;
+  flex-basis: 55vw;
   opacity: 1;
   height: 2.2rem;
   padding: 0.7rem 0.5rem 0.2rem;
@@ -72,6 +74,7 @@ input:hover {
 }
 
 .description {
+  box-sizing: border-box;
   display: inline-block;
   width: 0;
   opacity: 0;
@@ -89,40 +92,40 @@ input:hover {
 div.bottom-block:has(input[value='first']:checked)
   + div
   > div.item:first-child {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
 }
 
 div.bottom-block:has(input[value='second']:checked)
   + div
   > div.item:nth-child(2) {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
 }
 
 div.bottom-block:has(input[value='third']:checked)
   + div
   > div.item:nth-child(3) {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
 }
 
 div.bottom-block:has(input[value='fourth']:checked)
   + div
   > div.item:nth-child(4) {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
 }
 
 div.bottom-block:has(input[value='fifth']:checked) + div > div.item:last-child {
-  width: 60vw;
+  width: 70vw;
   opacity: 1;
 }
 
 div.input-panel:has(input[value='first']:checked)
   + div.description-panel
   > p.description:first-child {
-  width: 70vw;
+  width: 95%;
   opacity: 1;
   visibility: visible;
 }
@@ -130,7 +133,7 @@ div.input-panel:has(input[value='first']:checked)
 div.input-panel:has(input[value='second']:checked)
   + div.description-panel
   > p.description:nth-child(2) {
-  width: 70vw;
+  width: 95%;
   opacity: 1;
   visibility: visible;
 }
@@ -138,7 +141,7 @@ div.input-panel:has(input[value='second']:checked)
 div.input-panel:has(input[value='third']:checked)
   + div.description-panel
   > p.description:nth-child(3) {
-  width: 70vw;
+  width: 95%;
   opacity: 1;
   visibility: visible;
 }
@@ -146,7 +149,7 @@ div.input-panel:has(input[value='third']:checked)
 div.input-panel:has(input[value='fourth']:checked)
   + div
   > p.description:nth-child(4) {
-  width: 70vw;
+  width: 95%;
   opacity: 1;
   visibility: visible;
 }
@@ -154,11 +157,11 @@ div.input-panel:has(input[value='fourth']:checked)
 div.input-panel:has(input[value='fifth']:checked)
   + div
   > p.description:last-child {
-  width: 70vw;
+  width: 95%;
   opacity: 1;
   visibility: visible;
 }
 
 div.input-panel:has(input[value='fifth']:checked) + div.description-panel {
-  padding: 0.1rem 0.5rem 0.1rem;
+  padding: 0.1rem 0.1rem 0.1rem;
 }
