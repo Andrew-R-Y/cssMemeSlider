@@ -280,9 +280,13 @@ input.input:checked + label.pagination > span.circle {
     width: 90vw;
   }
 
+  .description {
+    font: 400 0.9rem Tahoma, sans-serif;
+  }
+
   .description_small {
     font: 400 0.75rem Tahoma, sans-serif;
-    padding-top: 0.1rem;
+    padding-top: 0;
   }
 
   div.bottom-block:has(input[value='first']:checked)
@@ -318,5 +322,12 @@ input.input:checked + label.pagination > span.circle {
     > div.item:last-child {
     width: 95vw;
     opacity: 1;
+  }
+}
+
+@media (max-width: 476px) {
+  .description-panel {
+    flex-basis: 3rem;
+    padding: 0.5rem 0.5rem 0.2rem;
   }
 }
