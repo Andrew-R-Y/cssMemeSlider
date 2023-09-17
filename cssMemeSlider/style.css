@@ -186,7 +186,7 @@ div.input-panel:has(input[value='fifth']:checked) + div.description-panel {
   flex-basis: 1.5rem;
   flex-shrink: 0;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 0.1rem solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,11 +237,11 @@ input.input:checked + label.pagination > span.circle {
 
 @media (max-width: 930px) {
   .container {
-    width: 80vw;
+    width: 70vw;
   }
 
   .item {
-    height: 80vh;
+    height: 70vh;
   }
 
   .bottom-block {
