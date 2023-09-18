@@ -227,10 +227,6 @@ input:checked + label .circle:active {
   opacity: 1;
 }
 
-input.input:checked + label.pagination {
-  cursor: auto;
-}
-
 input.input:checked + label.pagination > span.circle {
   background-color: firebrick;
 }
