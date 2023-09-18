@@ -207,13 +207,11 @@ div.input-panel:has(input[value='fifth']:checked) + div.description-panel {
 
   .pagination:hover > span.circle {
     border-color: firebrick;
+    border-width: 0.1rem;
   }
 
-  .disk:hover {
-    background-color: grey;
-  }
-  input.input:checked + label .disk:hover {
-    background-color: transparent;
+  .pagination:hover .disk {
+    background-color: #000000;
   }
 }
 
