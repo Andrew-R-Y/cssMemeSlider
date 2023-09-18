@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: bisque;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.slider-wrapper {
+  height: 95vh;
+  margin: 2vh auto;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: start;
+}
+
+.container {
+  width: 70vw;
+  margin: 1vh auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.item {
+  display: inline-block;
+  width: 0;
+  height: 80vh;
+  overflow: hidden;
+  background-color: #000000;
+  transition: all 0.5s;
+}
+
+.item img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom-block {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vh 2vw;
+}
+
+.description-panel {
+  box-sizing: border-box;
+  flex-basis: 50vw;
+  opacity: 1;
+  height: 2.2rem;
+  padding: 0.7rem 0.5rem 0.2rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+
+.description {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 0;
+  opacity: 0;
+  height: 100%;
+  font: 400 1rem Tahoma, sans-serif;
+  overflow: hidden;
+  transition: all 0.5s;
+  visibility: hidden;
+}
+
+.description_small {
+  font: 400 0.8rem Tahoma, sans-serif;
+}
+
+div.bottom-block:has(input[value='first']:checked)
+  + div
+  > div.item:first-child {
+  width: 70vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='second']:checked)
+  + div
+  > div.item:nth-child(2) {
+  width: 70vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='third']:checked)
+  + div
+  > div.item:nth-child(3) {
+  width: 70vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='fourth']:checked)
+  + div
+  > div.item:nth-child(4) {
+  width: 70vw;
+  opacity: 1;
+}
+
+div.bottom-block:has(input[value='fifth']:checked) + div > div.item:last-child {
+  width: 70vw;
+  opacity: 1;
+}
+
+div.input-panel:has(input[value='first']:checked)
+  + div.description-panel
+  > p.description:first-child {
+  width: 95%;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='second']:checked)
+  + div.description-panel
+  > p.description:nth-child(2) {
+  width: 95%;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='third']:checked)
+  + div.description-panel
+  > p.description:nth-child(3) {
+  width: 95%;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='fourth']:checked)
+  + div
+  > p.description:nth-child(4) {
+  width: 95%;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='fifth']:checked)
+  + div
+  > p.description:last-child {
+  width: 95%;
+  opacity: 1;
+  visibility: visible;
+}
+
+div.input-panel:has(input[value='fifth']:checked) + div.description-panel {
+  padding: 0.1rem 0.1rem 0.1rem;
+}
+
+.input-panel {
+  flex-basis: 11rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pagination {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 2rem;
+  height: 2.2rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  transition: all 0.7s;
+}
+
+.circle {
+  box-sizing: border-box;
+  height: 1.5rem;
+  flex-basis: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 0.1rem solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.disk {
+  flex: 0 0 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  transition: all 0.7s;
+}
+
+@media (hover: hover) {
+  .pagination:hover {
+    cursor: pointer;
+  }
+
+  .pagination:hover > span.circle {
+    border-color: firebrick;
+    border-width: 0.1rem;
+  }
+
+  .pagination:hover .disk {
+    background-color: #000000;
+  }
+}
+
+.circle:active {
+  scale: 1.5;
+  opacity: 0.2;
+}
+
+input:checked + label .circle:active {
+  scale: 1;
+  opacity: 1;
+}
+
+input.input:checked + label.pagination > span.circle {
+  background-color: firebrick;
+}
+
+@media (max-width: 930px) {
+  .container {
+    width: 70vw;
+  }
+
+  .item {
+    height: 70vh;
+  }
+
+  .bottom-block {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .description-panel {
+    align-self: start;
+    flex-basis: 2.2rem;
+    flex-grow: 0;
+    width: 100%;
+  }
+
+  .input-panel {
+    flex-basis: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 730px) {
+  .slider-wrapper {
+    height: 90vh;
+  }
+
+  div.container {
+    width: 90vw;
+  }
+
+  .item {
+    height: 55vh;
+  }
+
+  .bottom-block {
+    width: 90vw;
+  }
+
+  .description {
+    font: 400 0.9rem Tahoma, sans-serif;
+  }
+
+  .description_small {
+    font: 400 0.75rem Tahoma, sans-serif;
+    padding-top: 0;
+  }
+
+  div.bottom-block:has(input[value='first']:checked)
+    + div
+    > div.item:first-child {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='second']:checked)
+    + div
+    > div.item:nth-child(2) {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='third']:checked)
+    + div
+    > div.item:nth-child(3) {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='fourth']:checked)
+    + div
+    > div.item:nth-child(4) {
+    width: 95vw;
+    opacity: 1;
+  }
+
+  div.bottom-block:has(input[value='fifth']:checked)
+    + div
+    > div.item:last-child {
+    width: 95vw;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 476px) {
+  .description-panel {
+    flex-basis: 3rem;
+    padding: 0.5rem 0.5rem 0.2rem;
+  }
+}
